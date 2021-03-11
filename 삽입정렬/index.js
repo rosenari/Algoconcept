@@ -1,20 +1,18 @@
 (function () {
-    let arr = [7, 5, 1, 3, 2];
+    let arr = [7, 3, 5, 1, 2];
     const N = arr.length;
-    for (let i = 0; i < N - 1; i++) {
-        let least = i;
-        for (let j = i + 1; j < N; j++) {
-            if (arr[least] > arr[j]) {
-                least = j;
-            }
+
+    for (let i = 1; i < N; i++) {
+        let key = arr[i];
+
+        let j = i - 1;
+        for (; j >= 0 && key < arr[j]; j--) {
+            arr[j + 1] = arr[j];
         }
 
-        if (least !== i) {
-            let temp = arr[i];
-            arr[i] = arr[least];
-            arr[least] = temp;
-        }
+        arr[j + 1] = key;
     }
 
     console.log(arr);
+
 })();
