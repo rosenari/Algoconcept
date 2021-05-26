@@ -11,7 +11,7 @@
     }
 
     //누적합 구하기
-    for (let i = 0; i < N - 1; i++) {
+    for (let i = 0; i < MAX; i++) {
         count[i + 1] += count[i];
     }
 
